@@ -1,1 +1,11 @@
-test
+
+
+Steps:
+
+1: Goto folder where you want to download this repo
+2: git clone “https://github.com/REI-Systems/REISystems-Hackathon2015-Velocity.git”
+3: if Added new files : git add filename
+4: git commit
+5: git remote add origin “https://github.com/REI-Systems/REISystems-Hackathon2015-Velocity.git”
+6: git remote -v
+7: git push origin master
