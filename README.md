@@ -1,2 +1,9 @@
 # REISystems-Hackathon2015-Velocity
-Velocity
+
+-- Build Instructions
+
+
+-- Test Instructions
+
+
+-- Extra Info
