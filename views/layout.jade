@@ -1,7 +1,20 @@
 doctype html
 html
   head
-    title= title
+    title= "EPMS"
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Droid+Sans')
+    link(rel='stylesheet', href='./public/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='./public/stylesheets/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='./public/stylesheets/')
   body
     block content
+    script(
+    type='text/javascript',
+    src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js')
+    script(
+    type='text/javascript'
+    src='./public/javaScripts/bootstrap.min.js')
+    #dvContainer.page-header.lead.text-center
+        h1  Emergency Preparedness And Management System
+    block body_end
