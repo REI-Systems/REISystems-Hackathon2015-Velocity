@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      //'**.js'
-      'TestForKarma.JS'
+      '*.js'
+      //'Velocity/REISystems-Hackathon2015-Velocity/*.js'
+      //'TestForKarma.JS'
       //'velocity/REISystems-Hackathon2015-Velocity/tests/TestForKarma.JS'
     ],
 
