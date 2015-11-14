@@ -1,12 +1,11 @@
-// Code goes here
 describe("Testing this out", function(){
-    it("should have tests", function()){
-       expect(true).toBe(true);
-       });
+    it('should have tests', function(){
+       expect(true).toBeTruthy();       
+    });
 });
-it('should inject dependencies', inject(function (resource) {
-    expect($resource).ToBeDefined();
-}));
+//it('should inject dependencies', inject(function (resource) {
+//    expect($resource).ToBeDefined();
+//}));
 
 // var myApp = angular.module('myApp',[]);
 //myApp.controller('HelloWorldController', ['$scope', function($scope) {
