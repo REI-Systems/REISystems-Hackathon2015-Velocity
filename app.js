@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var findcert = require('./routes/findcert');
+var findshelter=require('./routes/findshelter');
 
 var app = express();
 
@@ -26,8 +28,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/Resources')));
 
+//find cert
+app.post('/', function(req,res){
+	res.send("CertID:"+req.body.CertID);
+  //console.log(req.body);
+});
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/findcert', findcert);
+app.use('/findshelter',findshelter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,6 +69,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 
 //module.exports = app;
