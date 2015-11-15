@@ -1,0 +1,39 @@
+extends layout
+
+block content
+	script.
+		var something = function() {
+			alert('something')
+			};
+			
+	#dvSignUp.container
+			
+			h2 EPMS Registration Form
+			
+			#signUpForm.form-horizontal						
+			
+			.form-group
+			label First Name
+			input.form-control("type", name="firstname", placeholder="First Name")
+			
+			.form-group
+			label Last Name
+			input.form-control("type", name="lastname", placeholder="Last Name")
+			
+			.form-group
+			label Email Address
+			input.form-control("type", name="username", placeholder="Email address")
+			
+			.form-group
+			label Phone Number
+			input.form-control("type", name="phonenumber", placeholder="Contact number")
+			
+			.form-group
+			label ZipCode
+			input.form-control("type", name="zipcode", placeholder="ZipCode")
+			
+			.form-group
+			button.btn.btn-large.btn-primary(type="submit", onclick='something()') Sign Up
+			
+
+block body_end
