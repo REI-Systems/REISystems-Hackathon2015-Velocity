@@ -1,13 +1,47 @@
 extends layout
 
 block content
-    #familyIDlookup.row.col-lg-5.col-lg-offset4.lead
-        input(type='text', name='Family Id')
-        label OR
-    #familyphoneLooup.row.col-lg-5.col-lg-offset4.lead
-        input(type='text', name='Primary Phone number')
-        label OR
-    #familyLastNameLookup.row.col-lg-5.col-lg-offset4.lead
-        input(type='text', name='Last Name/ Family Name')
+    #dvFindFamilyContainer.container
+        #familyIDlookup.row
+            label.col-lg-3(for='FamilyId') Family ID:
+            div
+                input#txtFamilyID.col-lg-6(type='text', name='FamilyId', placeholder='Enter Family Id', value='')
+                label(for='FamilyId')&nbsp;&nbsp;(OR)
+        br
+        br
+        #familyphoneLooup.row
+            label.col-lg-3(for='Phonenumber') Primary Phone Number:
+            div    
+                input#primePhoneNumber.col-lg-6(type='text', name='Phonenumber', placeholder='Enter Primary Phone Number', value='')
+                label(for='Phonenumber')&nbsp;&nbsp;(OR)
+        br
+        br
+        #familyLastNameLookup.row
+            label.col-lg-3(for='lastname') Enter Last Name/ Family Name:
+            div
+                input#lastname.col-lg-6(type='text', name='lastname', placeholder='Enter Last Name/ Family Name', value='')
+                label(for='Phonenumber')&nbsp;&nbsp;(OR)
+        br
+        br
+        .clearfix
+        br
+        #Submit.row.col-lg-4.col-lg-offset-4
+            input#btnConfirm.btn-lg.btn.btn-primary(name='submit', type='submit', value='Find Family Member(s)')
+        br
+        br
+        #dvResults(style="display:none"))
+            h6 Please Identify your Family from List below
+            table.table.table-responsive
+                thead
+                    tr
+                        th First Name
+                        th Last Name
+                        th Phone Number
+                        th Shelter
+                tbody
+                    tr
+                        td
+                        td
+                        td
 block body_end
 
