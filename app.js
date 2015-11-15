@@ -83,3 +83,18 @@ var Server = http.createServer(app);
 Server.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
+
+//Sockets 
+var io = require('socket.io')(Server);
+var shelter_Controller = require('./Sockets/sheltersSocketsController');
+/* var shelters = io
+        .of('/sheltering')
+        .on('connction', function(socket){
+        shelter_Controller.respond(shelters, socket);
+    }); */
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
