@@ -6,8 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var routes = require('./routes/index');
+<<<<<<< HEAD
 var shelters = require('./routes/shelters'); 
 var findMyFamily = require('./routes/findFamily')
+=======
+var users = require('./routes/users');
+var findcert = require('./routes/findcert');
+var findshelter=require('./routes/findshelter');
+>>>>>>> 00ef2dc0be5a81dd5bb2e60beef0f71285aeb7ef
 
 var app = express();
 
@@ -26,10 +32,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/Resources')));
+<<<<<<< HEAD
 //app.use(express.favicon());
 app.use('/', routes);
 app.use('/shelters', shelters);
 app.use('/findFamily', findMyFamily);
+=======
+
+//find cert
+app.post('/', function(req,res){
+	res.send("CertID:"+req.body.CertID);
+  //console.log(req.body);
+});
+
+app.use('/', routes);
+app.use('/users', users);
+app.use('/findcert', findcert);
+app.use('/findshelter',findshelter);
+>>>>>>> 00ef2dc0be5a81dd5bb2e60beef0f71285aeb7ef
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,6 +81,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 
 //module.exports = app;
