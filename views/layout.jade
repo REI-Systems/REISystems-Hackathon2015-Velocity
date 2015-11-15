@@ -17,11 +17,14 @@ href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.cs
 integrity='sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX',
 crossorigin='anonymous')
 
-
+link(
+rel ='stylesheet',
+href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css')
 
 link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
 link(rel='stylesheet', href='/css/Layout.css')
 link(rel='stylesheet', href='/css/Body.css')
+block head_content
 
 body.body
 
@@ -32,10 +35,15 @@ integrity='sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+
 crossorigin='anonymous')
 
 script(
+type ='text/javascript'
+href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js'
+)
+
+script(
 type='text/javascript',
 src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js')
 #dvMainContainer
-    #dvContainerHeader.page-header.lead.text-center.header
+    #dvContainerHeader.page-header.lead.text-center.header(style="padding-top:10px")
         h1  Emergency Preparedness And Management System
     block content
 block body_end

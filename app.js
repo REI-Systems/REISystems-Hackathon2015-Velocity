@@ -6,7 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var shelters = require('./routes/shelters'); 
+var findMyFamily = require('./routes/findFamily');
+var findcert = require('./routes/findcert');
+var findshelter=require('./routes/findshelter');
+
 
 var app = express();
 
@@ -26,8 +30,19 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/Resources')));
 
+//app.use(express.favicon());
 app.use('/', routes);
-app.use('/users', users);
+app.use('/shelters', shelters);
+app.use('/findFamily', findMyFamily);
+app.use('/findcert', findcert);
+app.use('/findshelter',findshelter);
+
+
+//find cert
+app.post('/', function(req,res){
+	res.send("CertID:"+req.body.CertID);
+  //console.log(req.body);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,6 +74,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 
 //module.exports = app;

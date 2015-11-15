@@ -1,0 +1,32 @@
+extends Layout
+block content
+
+	div
+	.clearfix
+	br
+	br
+	br
+	br
+	br
+	.row.col-lg-4.col-lg-offset-4.lead(style='font-family:sans-serif')
+		label.col-lg-3(for='ZipCode') Zip Code:
+		div
+		input#txtZipCode.col-lg-6(type='text', name='ZipCode', placeholder='Enter ZipCode', value='')
+	br
+	br
+	.col-lg-3.col-lg-offset-5.lead
+		label.lead
+		input(type='checkbox', value='')
+		|  Medical Assitance
+	.col-lg-5.col-lg-offset-5.lead
+		label.lead
+		input(type='checkbox', value='')
+		|  Foreign Language Assistance
+	.col-lg-5.col-lg-offset-5.lead
+		label.lead
+		input(type='checkbox', value='')
+		|  Fire & Rescue Assitance
+	.clearfix
+	br
+	.row.col-lg-4.col-lg-offset-4
+		input#btnFindShelter.btn-lg.btn.btn-primary.col-lg-3.col-lg-offset-6(name='submit', type='submit', value='Find Shelter')

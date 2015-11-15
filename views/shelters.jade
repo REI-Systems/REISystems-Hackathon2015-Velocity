@@ -1,0 +1,24 @@
+extends layout
+block head_content
+    //link(rel='stylesheet', href='/css/shelters.css')
+block content 
+    
+    #dvSheltersMain.container
+        h3 List of Available Shelters near you
+        table.table.table-responsive
+            thead
+                tr 
+                    th Shelter Name
+                    th Address
+                    th Has Medical Assistance
+                    th Can assist in Foreign Language
+                    th Fire and Resuce Capacity
+            tbody
+                each item in shelterListdata
+                    tr
+                        td #{item.name}
+                        td #{item.address}, #{item.city}, #{item.state}, #{item.zipcode}
+                        td #{item.medicalassistance}
+                        td #{item.foreignlanguage}
+                        td #{item.fireandrecue}
+block body_end
