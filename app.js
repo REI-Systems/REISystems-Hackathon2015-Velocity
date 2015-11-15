@@ -10,6 +10,7 @@ var shelters = require('./routes/shelters');
 var findMyFamily = require('./routes/findFamily');
 var findcert = require('./routes/findcert');
 var findshelter=require('./routes/findshelter');
+var signUp = require('./routes/signUp');
 
 
 var app = express();
@@ -36,6 +37,7 @@ app.use('/shelters', shelters);
 app.use('/findFamily', findMyFamily);
 app.use('/findcert', findcert);
 app.use('/findshelter',findshelter);
+app.use('/signUp', signUp);
 
 
 //find cert

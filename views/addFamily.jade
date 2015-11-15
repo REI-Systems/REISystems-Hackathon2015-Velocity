@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	.container
+		
+		#familyForm.form-horizontal
+			
+			.form-group
+			label Family Member
+			input.form-control("type", name="fname", placeholder="First Name")
+			input.form-control("type", name="lname", placeholder="Last Name")
+			input.form-control("type", name="pnumer", placeholder="Phone Number")
+			button.btn.btn-large.btn-primary(type="submit") Add 
+		
+		#familyTemplate.form-group.hide
+			label  Family Member
+			input.form-control("type", name="fname1", placeholder="First Name")
+			input.form-control("type", name="lname1", placeholder="First Name")
+			input.form-control("type", name="pnumer2", placeholder="Phone Number")
+			button.btn.btn-large.btn-primary(type="submit") Remove
+			
+			.form-group
+			button.btn.btn-default(type='submit') Submit
+	
+block body_end
