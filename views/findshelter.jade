@@ -16,17 +16,20 @@ block content
 	br
 	.col-lg-3.col-lg-offset-5.lead
 		label.lead
-		input(type='checkbox', value='')
+		input#chkMedicalAssist(type='checkbox', value='')
 		|  Medical Assistance
 	.col-lg-5.col-lg-offset-5.lead
 		label.lead
-		input(type='checkbox', value='')
+		input#chkForeignLangAssist(type='checkbox', value='')
 		|  Foreign Language Assistance
 	.col-lg-5.col-lg-offset-5.lead
 		label.lead
-		input(type='checkbox', value='')
+		input#chkFireAndRescueAssist(type='checkbox', value='')
 		|  Fire & Rescue Assistance
 	.clearfix
 	br
 	.row.col-lg-4.col-lg-offset-4
-		a.btn#btnFindShelter.btn-lg.btn.btn-primary.col-lg-3.col-lg-offset-6.text-center(name='submit', href='./shelters') Find Shelter
+		a.btn#btnFindShelter.btn-lg.btn.btn-primary.col-lg-3.col-lg-offset-6.text-center(name='submit', href='./shelters') Find shelters
+	script(type='text/javascript',src='/socket.io/socket.io.js')
+	script(type='text/javascript',src='/js/findshelter.js')
+	
