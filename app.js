@@ -10,6 +10,7 @@ var shelters = require('./routes/shelters');
 var findMyFamily = require('./routes/findFamily');
 var findcert = require('./routes/findcert');
 var findshelter=require('./routes/findshelter');
+var signUp = require('./routes/signUp');
 
 
 var app = express();
@@ -36,6 +37,7 @@ app.use('/shelters', shelters);
 app.use('/findFamily', findMyFamily);
 app.use('/findcert', findcert);
 app.use('/findshelter',findshelter);
+app.use('/signUp', signUp);
 
 
 //find cert
@@ -79,9 +81,10 @@ app.use(function(err, req, res, next) {
 
 //module.exports = app;
 //Creating Server 
-var Server = http.createServer(app);
+/*var Server = http.createServer(app);
 Server.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
+<<<<<<< HEAD
 });
 
 //Sockets 
@@ -92,9 +95,12 @@ var shelter_Controller = require('./Sockets/sheltersSocketsController');
         .on('connction', function(socket){
         shelter_Controller.respond(shelters, socket);
     }); */
-io.on('connection', function (socket) {
+/*io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
   socket.on('my other event', function (data) {
     console.log(data);
   });
-});
+});*/
+
+
+module.exports = app;
