@@ -1,8 +1,8 @@
 function findFamily(){
    var data;
-    var FamilyId = $("id$=txtFamilyID").val('');
-    var PrimaryPhonenumber = $("id$=primePhoneNumber");
-    var LastName = $("id$=lastname").val();
+    var FamilyId = $("[id$=txtFamilyID]").val();
+    var PrimaryPhonenumber = $("[id$=primePhoneNumber]").val();
+    var LastName = $("[id$=lastname]").val();
     if(FamilyId)
     {
         data = {'FamilyId' : FamilyId};
@@ -16,10 +16,12 @@ function findFamily(){
     }
     
     $.ajax({
-        url: 'localhost:3000/FindaFamilymember',
+        url: 'http://localhost:3000/FindaFamilymember',
         type: 'GET',
+        contentType: "application/json; charset=utf-8",
         data : JSON.stringify(data),
         success: function(data){
+            
             return data;
         },
         error: function(error){

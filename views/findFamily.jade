@@ -1,6 +1,7 @@
 extends layout
 
 block content
+    script(type='text/javascript', src='/js/findFamily.js')
     #dvFindFamilyContainer.container
         #familyIDlookup.row
             label.col-lg-3(for='FamilyId') Family ID:
@@ -26,7 +27,7 @@ block content
         .clearfix
         br
         #Submit.row.col-lg-4.col-lg-offset-4
-            input#btnConfirm.btn-lg.btn.btn-primary(name='submit', type='submit', value='Find Family Member(s)')
+            input#btnConfirm.btn-lg.btn.btn-primary(name='submit', type='submit', value='Find Family Member(s)', onclick='findFamily()')
         br
         br
         #dvResults(style="display:none")
