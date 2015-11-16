@@ -7,6 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('reiapp:server');
 var http = require('http');
+var MongoClient = require('mongodb').MongoClient
+, format = require('util').format;
 
 /**
  * Get port from environment and store in Express.
@@ -97,21 +99,21 @@ io.on('connection', function (socket) {
         if (err) {
             throw err;
         } else {
-            db.collection('signup').insertOne({
-                "FirstName": req.FirstName,
-                "LastName": req.LastName,
+            db.collection('signup').insert({
+                "FirstName": data.FirstName,
+                "LastName": data.LastName,
                 "Address":{
-                    "street" : req.street,
-                    "city" : req.state,
-                    "zipCode": req.zipcode
+                    "street" : data.street,
+                    "city" : data.city,
+                    "zipCode": data.ZipCode
                 },
-                "PrimaryPhonenumber":req.PrimaryPhonenumber,
-                "email" : req.email
+                "PrimaryPhonenumber":data.PhoneNumber,
+                "email" : data.EmailAddress
             },function(err, result){
-                assert.equal(err, null);
-                socket.emit();
+                console.log(err);
             });
-        }
+			console.log(data);
+		}
         db.close();
     });
   });
