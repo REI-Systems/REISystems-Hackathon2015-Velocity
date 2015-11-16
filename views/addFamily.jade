@@ -1,25 +1,52 @@
 extends layout
 
 block content
+
+	script.
+		$(document).ready(function() {
+		$('#addFamilyForm')
+		// Add button click handler
+		.on('click', '.addButton', function() {
+			var $template = $('#familyTemplate'),
+			$clone    = $template
+			.clone()
+			.removeClass('hide')
+			.removeAttr('id')
+			.insertBefore($template);
+		})	
+		.on('click', '.removeButton', function() {
+			var $row  = $(this).parents('.form-group');
+			// Remove element containing the fields
+			$row.remove();
+		});
+		});
+		
 	.container
-		
-		#familyForm.form-horizontal
+
+		form#addFamilyForm.form-inline(method='post')
+			
+			h3 Register family members:
+			br
 			
 			.form-group
-			label Family Member
-			input.form-control("type", name="fname", placeholder="First Name")
-			input.form-control("type", name="lname", placeholder="Last Name")
-			input.form-control("type", name="pnumer", placeholder="Phone Number")
-			button.btn.btn-large.btn-primary(type="submit") Add 
-		
-		#familyTemplate.form-group.hide
-			label  Family Member
-			input.form-control("type", name="fname1", placeholder="First Name")
-			input.form-control("type", name="lname1", placeholder="First Name")
-			input.form-control("type", name="pnumer2", placeholder="Phone Number")
-			button.btn.btn-large.btn-primary(type="submit") Remove
+				input.form-control(type='text', placeholder='First Name')
+				input.form-control(type='text', placeholder='Last Name')
+				input.form-control(type='text', placeholder='Phone Number')
+				button.btn.btn-default.addButton(type='button') +	
+				
+			// The template for adding new field
+			#familyTemplate.form-group.hide
+				input.form-control(type='text', placeholder='First Name')
+				input.form-control(type='text', placeholder='Last Name')
+				input.form-control(type='text', placeholder='Phone Number')
+				button.btn.btn-default.removeButton(type='button') -
+				
+			div
+			br
 			
 			.form-group
-			button.btn.btn-default(type='submit') Submit
-	
+				button.btn.btn-primary(type='submit') Submit
+				button.btn.btn-primary(type='submit') Skip
+
+
 block body_end

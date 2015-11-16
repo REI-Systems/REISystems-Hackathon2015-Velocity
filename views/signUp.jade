@@ -1,11 +1,12 @@
 extends layout
 
-block content
+block content	
 	script(type='text/javascript',src='/socket.io/socket.io.js')
 	script(type='text/javascript',src='/js/signuppublic.js')
-			
-	#dvSignUp.container
-			
+	
+	#dvSignUpContainer.container
+		
+		.row.row-wrapper
 			h2 EPMS Registration Form
 			
 			#signUpForm.form-horizontal						
@@ -31,7 +32,6 @@ block content
 			input#txtZipCode.form-control(type='text', name="zipcode", placeholder="ZipCode")
 			
 			.form-group
-			a.btn#btnSignUp.btn-large.btn-primary(name="btnSignUp") Sign Up
+			a.btn#btnSignUp.btn-large.btn-primary(name="btnSignUp", href='./signUp/addFamily') Sign Up
 			
-
 block body_end
