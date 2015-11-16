@@ -1,10 +1,8 @@
 extends layout
 
 block content
-	script.
-		var something = function() {
-			alert('something')
-			};
+	script(type='text/javascript',src='/socket.io/socket.io.js')
+	script(type='text/javascript',src='/js/signuppublic.js')
 			
 	#dvSignUp.container
 			
@@ -14,26 +12,26 @@ block content
 			
 			.form-group
 			label First Name
-			input.form-control("type", name="firstname", placeholder="First Name")
+			input#txtFirstName.form-control(type='text', name="firstname", placeholder="First Name")
 			
 			.form-group
 			label Last Name
-			input.form-control("type", name="lastname", placeholder="Last Name")
+			input#txtLastName.form-control(type='text', name="lastname", placeholder="Last Name")
 			
 			.form-group
 			label Email Address
-			input.form-control("type", name="username", placeholder="Email address")
+			input#txtEmailAddress.form-control(type='text', name="username", placeholder="Email address")
 			
 			.form-group
 			label Phone Number
-			input.form-control("type", name="phonenumber", placeholder="Contact number")
+			input#txtPhoneNumber.form-control(type='text', name="phonenumber", placeholder="Contact number")
 			
 			.form-group
 			label ZipCode
-			input.form-control("type", name="zipcode", placeholder="ZipCode")
+			input#txtZipCode.form-control(type='text', name="zipcode", placeholder="ZipCode")
 			
 			.form-group
-			button.btn.btn-large.btn-primary(type="submit", onclick='something()') Sign Up
+			a.btn#btnSignUp.btn-large.btn-primary(name="btnSignUp") Sign Up
 			
 
 block body_end
