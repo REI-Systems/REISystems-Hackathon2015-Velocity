@@ -11,6 +11,7 @@ var findMyFamily = require('./routes/findFamily');
 var findcert = require('./routes/findcert');
 var findshelter=require('./routes/findshelter');
 var signUp = require('./routes/signUp');
+var addFamily = require('./routes/addFamily');
 var MongoClient = require('mongodb').MongoClient
 , format = require('util').format;
 
@@ -40,6 +41,7 @@ app.use('/findFamily', findMyFamily);
 app.use('/findcert', findcert);
 app.use('/findshelter',findshelter);
 app.use('/signUp', signUp);
+app.use('/signUp/addfamily', addFamily);
 
 
 //find cert
