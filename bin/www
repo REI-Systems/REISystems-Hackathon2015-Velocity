@@ -88,14 +88,9 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
+
 /* Socket IO */
-var io = require('socket.io')(Server);
+var io = require('socket.io')(server);
 io.on('connection', function (socket) {
   socket.on('client_data', function (data) {
     MongoClient.connect('mongodb://reihack15.cloudapp.net:27017/test', function (err, db) {
